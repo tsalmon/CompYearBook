@@ -10,6 +10,7 @@ class FunctionsController < ApplicationController
   # GET /functions/1
   # GET /functions/1.json
   def show
+	@users = Function.find(params[:id]).user
   end
 
   # GET /functions/new

@@ -1,8 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @function.name %>
+	<strong>Name:</strong>
+	<%= @function.name %>
+	<% @users.each do |user| %>
+		<div><%= link_to "#{user.name} #{user.surname}", user_path(user.id) %></div>
+	<% end %>
 </p>
 
 <%= link_to 'Edit', edit_function_path(@function) %> |

@@ -4,8 +4,8 @@
 		<%= link_to image_tag("user.png", :alt => "#{user.surname} #{user.name}"), user_path(user.id) %>
 		<div>
 			<span><%= user.surname %></span>
-			<span><%= user.function_id %></span>
-			<span><%= user.name %></span>
+			<span><%= user.name %></span>,
+			<span><%= user.function.name %></span>
 		</div>
     </div>
 <% end %>

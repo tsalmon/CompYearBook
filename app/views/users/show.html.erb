@@ -15,5 +15,26 @@
   <%= link_to @user.function.name, function_path(@user.function.id) %>
 </p>
 
+<p>
+	<strong>Hierarchy:</strong>
+	<ul>
+		<% if @user.parent %>
+			<li><%= link_to "#{@user.parent.name} #{@user.parent.surname}", user_path(@user.parent.id) %></li>
+		<% else%>
+			<li>Pas de supérieur</li>
+		<% end %>
+		<ul>
+			<li><span><%= "#{@user.name} #{@user.surname}" %></span></li>
+			<ul>
+			<% if @user.children %>
+				<% @user.children.each do |c| %>
+					<li><%= link_to "#{c.name} #{c.surname}", user_path(c.id)%></li>
+				<% end %>
+			<% end %>
+			</ul>
+		</ul>
+	</ul>
+</p>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
