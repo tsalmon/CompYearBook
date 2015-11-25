@@ -12,7 +12,7 @@
 
 <p>
   <strong>Function:</strong>
-  <%= @user.function_id %>
+  <%= link_to @user.function.name, function_path(@user.function.id) %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
