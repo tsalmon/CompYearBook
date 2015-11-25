@@ -35,6 +35,8 @@ gem 'bcrypt', '~> 3.1.7'
 # http://www.purecss.io
 gem 'purecss-rails'
 
+# include AngularJS
+gem 'angularjs-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
