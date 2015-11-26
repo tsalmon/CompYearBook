@@ -22,6 +22,10 @@ class UsersController < ApplicationController
   def edit
   end
 
+  # GET /users/hierarchy
+  def hierarchy
+  end
+
   # POST /users
   # POST /users.json
   def create
