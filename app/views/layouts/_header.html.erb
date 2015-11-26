@@ -1,3 +1,7 @@
 <div>
 header
+<%= form_tag(users_path, :method => "get", id: "search-form") do %>
+	<%= text_field_tag :search, params[:search], class: "search-query", placeholder: "namesearch", type: "search", data: {autocomplete: users_autocomplete_user_name_path } %>
+	<%= submit_tag "Search" %>
+<% end %>
 </div>

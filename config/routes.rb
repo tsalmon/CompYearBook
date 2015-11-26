@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get 'hierarchy/index'
+  get 'users/autocomplete_user_name'
+	resources :users
 
   resources :functions
   resources :users
