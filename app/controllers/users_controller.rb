@@ -24,7 +24,6 @@ class UsersController < ApplicationController
 
   # GET /users/hierarchy
   def hierarchy
-
   end
 
   # POST /users
