@@ -1,0 +1,27 @@
+ul.tree, ul.tree ul {
+	list-style-type: none;
+	background: url(http://adpi-intra/intranet_php/testannuaire/img/tree_style/vline.png) repeat-y;
+	margin: 0;
+	padding: 0;
+}
+
+ul.tree ul {
+	margin-left: 10px;
+}
+
+ul.tree li {
+	margin: 0;
+	padding: 0 12px;
+	line-height: 20px;
+	background: url(../images/tree_style/node.png) no-repeat;
+	color: #369;
+	font-weight: bold;
+}
+
+ul.tree li.last {
+    background: #fff url(http://adpi-intra/intranet_php/testannuaire/img/tree_style/lastnode.png) no-repeat;
+}
+  
+ul.root{
+	list-style-type: none;	
+}

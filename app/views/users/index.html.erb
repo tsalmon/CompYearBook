@@ -6,7 +6,9 @@
 			<div>
 				<span><%= user.surname %></span>
 				<span><%= user.name %></span>,
+				<% if user.function %>
 				<span><%= user.function.name %></span>
+				<% end %>
 			</div>
 		</div>
 	<% end %>

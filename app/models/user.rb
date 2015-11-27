@@ -10,4 +10,13 @@ class User < ActiveRecord::Base
 	validates :surname,
 		presence: true,
 		length: {minimum: 2, maximum: 25}
+
+	def self.function
+		if(self.function?)
+			function
+		else
+			"Pas de fonction"
+		end
+	end
+
 end

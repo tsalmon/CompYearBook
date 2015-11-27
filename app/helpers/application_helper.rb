@@ -5,7 +5,7 @@ module ApplicationHelper
 	if(lead.children.size == 0)
 		str.html_safe
 	else
-		str += "<ul>"
+		str += '<ul class="tree">'
 		lead.children.each do |c|
 			str += hierarchy_toString(c)
 		end
