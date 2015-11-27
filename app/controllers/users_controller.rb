@@ -23,8 +23,10 @@ class UsersController < ApplicationController
   end
 
   # GET /users/hierarchy
-  def hierarchy
+  def hierarchy(lead = Rails.application.config.leader_id)
+	@leader = User.find(Rails.application.config.leader_id)
   end
+
 
   # POST /users
   # POST /users.json
