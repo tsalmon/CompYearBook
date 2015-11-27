@@ -12,9 +12,12 @@
 
 <p>
   <strong>Function:</strong>
-  <%= link_to @user.function.name, function_path(@user.function.id) %>
+  <% if @user.function %>
+	<%= link_to @user.function.name, function_path(@user.function.id) %>
+  <% else %>
+	Indéfinie
+  <% end %>
 </p>
-
 <p>
 	<strong>Hierarchy:</strong>
 	<ul>
