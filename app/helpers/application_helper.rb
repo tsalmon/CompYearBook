@@ -1,16 +1,16 @@
 module ApplicationHelper
 
   def hierarchy_toString(lead)
-	str = "<li> <a href=\"#{ user_path(lead.id) }\">#{lead.name + " " + lead.surname}</a></li>"
+	str = "<a href=\"#{ user_path(lead.id) }\">#{lead.name + " " + lead.surname}</a></li>"
 	if(lead.children.size == 0)
-		str.html_safe
+		('<li class="last">' + str).html_safe
 	else
 		str += '<ul class="tree">'
 		lead.children.each do |c|
 			str += hierarchy_toString(c)
 		end
 		str += "</ul>"
-		str.html_safe
+		('<li>' + str).html_safe
 	end
   end
 end
