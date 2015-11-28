@@ -4,7 +4,7 @@
 
 <ul>
 <% @functions.each do |function| %>
-	<li><%= function.name %>
+	<li><%= link_to function.name, function_path(function.id) %>
 		<ul>
 		<% function.user.each do |user| %>
 			<li><%= link_to "#{user.name} #{user.surname}", user_path(user.id) %></li>

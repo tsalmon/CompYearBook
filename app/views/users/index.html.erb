@@ -7,7 +7,7 @@
 				<span><%= user.surname %></span>
 				<span><%= user.name %></span>,
 				<% if user.function %>
-				<span><%= user.function.name %></span>
+				<span><%= link_to user.function.name, function_path(user.function.id) %></span>
 				<% end %>
 			</div>
 		</div>

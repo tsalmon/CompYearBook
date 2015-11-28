@@ -20,21 +20,25 @@
 </p>
 <p>
 	<strong>Hierarchy:</strong>
-	<ul>
+	<ul class="hierarchy">
 		<% if @user.parent %>
-			<li><%= link_to "#{@user.parent.name} #{@user.parent.surname}", user_path(@user.parent.id) %></li>
+			<li class="root"><%= link_to "#{@user.parent.name} #{@user.parent.surname}", user_path(@user.parent.id) %></li>
 		<% else%>
-			<li>Pas de supérieur</li>
+			<li class="root">Pas de supérieur</li>
 		<% end %>
 		<ul>
-			<li><span><%= "#{@user.name} #{@user.surname}" %></span></li>
-			<ul>
-			<% if @user.children %>
-				<% @user.children.each do |c| %>
-					<li><%= link_to "#{c.name} #{c.surname}", user_path(c.id)%></li>
+			<li>
+				<span>
+					<%= "#{@user.name} #{@user.surname}" %>
+				</span>
+				<ul>
+				<% if @user.children %>
+					<% @user.children.each do |c| %>
+						<li><%= link_to "#{c.name} #{c.surname}", user_path(c.id)%></li>
+					<% end %>
 				<% end %>
-			<% end %>
-			</ul>
+				</ul>
+			</li>
 		</ul>
 	</ul>
 </p>
