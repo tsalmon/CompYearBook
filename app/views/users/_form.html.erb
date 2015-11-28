@@ -21,7 +21,8 @@
   </div>
   <div class="field">
     <%= f.label :function_id %><br>
-    <%= f.number_field :function_id %>
+	<%= f.select :function_id, Function.all.collect { |fn| [fn.name, fn.id] }, include_blank: true %>
+	<%# f.number_field :function_id %>
   </div>
   <div class="actions">
     <%= f.submit %>
