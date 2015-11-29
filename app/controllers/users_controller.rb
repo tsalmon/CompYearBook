@@ -5,7 +5,12 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+	if(params[:search])
+		user = User.where(name: params[:search])
+		redirect_to user_path(user.ids[0])
+	else
+		@users = User.all
+	end
   end
 
   # GET /users/1
