@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  autocomplete :user, :name, :full => true
+  autocomplete :user, :last_name, :full => true
 
   # GET /users
   # GET /users.json
   def index
 	if(params[:search])
-		user = User.where(name: params[:search])
+		user = User.where(last_name: params[:search])
 		redirect_to user_path(user.ids[0])
 	else
 		@users = User.all
@@ -81,6 +81,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :surname, :function_id)
+      params.require(:user).permit(:first_name, :last_name, :function_id)
     end
 end

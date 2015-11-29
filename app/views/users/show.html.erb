@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @user.name %>
+  <strong>First name:</strong>
+  <%= @user.first_name %>
 </p>
 
 <p>
-  <strong>Surname:</strong>
-  <%= @user.surname %>
+  <strong>Last name:</strong>
+  <%= @user.last_name %>
 </p>
 
 <p>
@@ -22,19 +22,19 @@
 	<strong>Hierarchy:</strong>
 	<ul class="hierarchy">
 		<% if @user.parent %>
-			<li class="root"><%= link_to "#{@user.parent.name} #{@user.parent.surname}", user_path(@user.parent.id) %></li>
+			<li class="root"><%= link_to "#{@user.parent.first_name} #{@user.parent.last_name}", user_path(@user.parent.id) %></li>
 		<% else%>
 			<li class="root">Pas de supérieur</li>
 		<% end %>
 		<ul>
 			<li>
 				<span>
-					<%= "#{@user.name} #{@user.surname}" %>
+					<%= "#{@user.first_name} #{@user.last_name}" %>
 				</span>
 				<ul>
 				<% if @user.children %>
 					<% @user.children.each do |c| %>
-						<li><%= link_to "#{c.name} #{c.surname}", user_path(c.id)%></li>
+						<li><%= link_to "#{c.first_name} #{c.last_name}", user_path(c.id)%></li>
 					<% end %>
 				<% end %>
 				</ul>
