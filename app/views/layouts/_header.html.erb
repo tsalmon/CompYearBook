@@ -3,9 +3,14 @@
 	<ul class="pure-menu-list">
 		<li class="pure-menu-item">
 			<%= form_tag(users_path, :method => "get", id: "search-form") do %>
-				<%= text_field_tag :search, params[:search], class: "search-query", placeholder: "namesearch", type: "search", data: {autocomplete: users_autocomplete_user_name_path } %>
+				<%= text_field_tag :search, params[:search], class: "search-query", placeholder: "user name", type: "search", data: {autocomplete: users_autocomplete_user_name_path } %>
 				<%= submit_tag "Search", :class => "button-large pure-button" %>
 			<% end %>
+			<script>
+				$("#search").bind('railsAutocomplete.select', function(event, data){
+					$('#search-form').submit()
+				})
+			</script>
 		</li>
 		<li class="pure-menu-item">
 			<%= link_to "Functions", functions_path, :class => "pure-menu-link button-large pure-button" %>
