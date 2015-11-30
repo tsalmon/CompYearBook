@@ -1,17 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>First name:</strong>
-  <%= @user.first_name %>
+	<strong> <%= t('first_name') %> :</strong>
+	<%= @user.first_name %>
 </p>
 
 <p>
-  <strong>Last name:</strong>
-  <%= @user.last_name %>
+	<strong> <%= t('last_name') %> :</strong>
+	<%= @user.last_name %>
 </p>
 
 <p>
-  <strong>Function:</strong>
+	<strong><%= t('function') %>:</strong>
   <% if @user.function %>
 	<%= link_to @user.function.name, function_path(@user.function.id) %>
   <% else %>
@@ -19,7 +19,7 @@
   <% end %>
 </p>
 <p>
-	<strong>Hierarchy:</strong>
+<strong><%= t('hierarchy') %>:</strong>
 	<ul class="hierarchy">
 		<% if @user.parent %>
 			<li class="root"><%= link_to "#{@user.parent.first_name} #{@user.parent.last_name}", user_path(@user.parent.id) %></li>
@@ -43,5 +43,5 @@
 	</ul>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to t('edit'), edit_user_path(@user) %> |
+<%= link_to t('back'), users_path %>

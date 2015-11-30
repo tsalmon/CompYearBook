@@ -1,10 +1,10 @@
 <div id="header" class="pure-menu pure-menu-horizontal">
-	<%= link_to "Home", root_url, :class => "pure-menu-heading pure-menu-link button-large pure-button" %>
+	<%= link_to t("home"), root_url, :class => "pure-menu-heading pure-menu-link button-large pure-button" %>
 	<ul class="pure-menu-list">
 		<li class="pure-menu-item">
 			<%= form_tag(users_path, :method => "get", id: "search-form") do %>
-				<%= text_field_tag :search, params[:seach], class: "search-query", placeholder: "user name", type: "search", data: {autocomplete: users_autocomplete_user_name_path } %>
-				<%= submit_tag "Search", :class => "button-large pure-button" %>
+				<%= text_field_tag :search, params[:seach], class: "search-query", placeholder: t("search_default_text"), type: "search", data: {autocomplete: users_autocomplete_user_name_path } %>
+				<%= submit_tag t('search'), :class => "button-large pure-button" %>
 			<% end %>
 			<script>
 				$("#search").bind('railsAutocomplete.select', function(event, data){
@@ -13,9 +13,9 @@
 			</script>
 		</li>
 		<li class="pure-menu-item">
-			<%= link_to "Functions", functions_path, :class => "pure-menu-link button-large pure-button" %>
+			<%= link_to t('functions'), functions_path, :class => "pure-menu-link button-large pure-button" %>
 		</li>
 		<li class="pure-menu-item">
-			<%= link_to "Hierarchy", users_hierarchy_path, :class => "pure-menu-link button-large pure-button" %>
+			<%= link_to t("hierarchy"), users_hierarchy_path, :class => "pure-menu-link button-large pure-button" %>
 		</li>
 </div>

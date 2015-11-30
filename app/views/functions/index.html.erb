@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Functions</h1>
+<h1><%= t('listing_functions') %></h1>
 
 <ul>
 <% @functions.each do |function| %>
@@ -16,5 +16,5 @@
 
 <br>
 
-<%= link_to 'New Function', new_function_path %>
+<%= link_to t('new_function'), new_function_path %>
 

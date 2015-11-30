@@ -7,7 +7,11 @@ class UsersController < ApplicationController
   def index
 	if(params[:search])
 		user = User.where(last_name: params[:search])
-		redirect_to user_path(user.ids[0])
+		unless user.nil?
+			redirect_to "/"
+		else
+			redirect_to user_path(user.ids[0])
+		end
 	else
 		@users = User.all
 	end

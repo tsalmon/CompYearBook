@@ -12,19 +12,19 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :first_name %><br>
+    <%= f.label :first_name, t('first_name') %><br>
     <%= f.text_field :first_name %>
   </div>
   <div class="field">
-    <%= f.label :last_name %><br>
+    <%= f.label :last_name, t('last_name') %><br>
     <%= f.text_field :last_name %>
   </div>
   <div class="field">
-    <%= f.label :function_id %><br>
+    <%= f.label :function_id, t('function') %><br>
 	<%= f.select :function_id, Function.all.collect { |fn| [fn.name, fn.id] }, include_blank: true %>
 	<%# f.number_field :function_id %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit t('create_user') %>
   </div>
 <% end %>
