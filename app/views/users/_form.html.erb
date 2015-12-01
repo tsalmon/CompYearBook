@@ -22,7 +22,10 @@
   <div class="field">
     <%= f.label :function_id, t('function') %><br>
 	<%= f.select :function_id, Function.all.collect { |fn| [fn.name, fn.id] }, include_blank: true %>
-	<%# f.number_field :function_id %>
+  </div>
+  <div class="field">
+	  <%= f.label :parent_id, t('manager') %><br/>
+	<%= f.select :parent_id, User.where("id != ?", @user.id).collect { |usr| [usr.last_name + " " + usr.first_name, usr.id] }, include_blank: true %>
   </div>
   <div class="actions">
     <%= f.submit t('create_user') %>
