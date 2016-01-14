@@ -1,20 +1,17 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  autocomplete :user, :last_name, :full => true
+  autocomplete :user, :last_name, :full => true, :display_value => :display_name
+
 
   # GET /users
   # GET /users.json
   def index
-	if(params[:search])
-		user = User.where(last_name: params[:search])
-		unless user.nil?
-			redirect_to "/"
-		else
-			redirect_to user_path(user.ids[0])
-		end
-	else
-		@users = User.all
-	end
+	  @users = nil
+    if params[:search]
+      @users = User.last_name_like("%#{params[:search]}%").order('last_name')
+    else
+      @users = User.all
+    end
   end
 
   # GET /users/1

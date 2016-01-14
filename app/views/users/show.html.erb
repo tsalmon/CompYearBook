@@ -30,6 +30,7 @@
 			<li>
 				<span>
 					<%= "#{@user.first_name} #{@user.last_name}" %>
+					<%= link_to image_tag("user.png", class: "user_img",:alt => "#{@user.last_name} #{@user.first_name}"), user_path(@user.id) %>
 				</span>
 				<ul>
 				<% if @user.children %>
